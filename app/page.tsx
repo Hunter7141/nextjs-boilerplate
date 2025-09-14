@@ -1,103 +1,87 @@
-import Image from "next/image";
-
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+<!doctype html>
+font-weight:800;
+letter-spacing:-0.02em;
+margin:0 0 6px 0;
 }
+.subtitle{
+color:var(--muted);
+margin:0;
+font-weight:300;
+}
+.hub{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+gap:20px;
+margin-top:28px;
+}
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+padding:18px 22px;
+border-radius:14px;
+text-decoration:none;
+background:linear-gradient(135deg,var(--accent1),var(--accent2));
+color:white;
+font-weight:600;
+font-size:18px;
+box-shadow:0 6px 20px rgba(0,0,0,0.6), inset 0 -2px 8px rgba(255,255,255,0.02);
+transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+-webkit-tap-highlight-color: transparent;
+border:0;
+}
+.btn:focus{outline:3px solid rgba(124,92,255,0.18); outline-offset:3px}
+.btn:hover{transform:translateY(-6px) scale(1.01); box-shadow:0 12px 30px rgba(0,0,0,0.7)}
+.btn.secondary{background:linear-gradient(135deg,#222,#323232); color:var(--muted); border:1px solid rgba(255,255,255,0.04)}
+
+
+.note{color:var(--muted); font-size:13px; margin-top:16px}
+
+
+/* small screens */
+@media (max-width:420px){
+.btn{padding:14px 16px; font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1 class="title">Baddies</h1>
+<p class="subtitle">A simple hub linking to my other sites</p>
+</header>
+
+
+<main>
+<div class="hub">
+<!-- Replace href values with your real links -->
+<a class="btn" id="btn-1" href="#" target="_blank" rel="noopener noreferrer" aria-label="Open site one">Site One</a>
+<a class="btn" id="btn-2" href="#" target="_blank" rel="noopener noreferrer" aria-label="Open site two">Site Two</a>
+<a class="btn" id="btn-3" href="#" target="_blank" rel="noopener noreferrer" aria-label="Open site three">Site Three</a>
+</div>
+
+
+<p class="note">Tip: edit the <code>href</code> attributes to point to your sites. Buttons open in a new tab.</p>
+</main>
+</div>
+
+
+<script>
+// OPTIONAL: quick way to set links dynamically (useful if you later want to change from JS)
+// Example usage:
+// document.getElementById('btn-1').href = 'https://example.com'
+
+
+// Small safety: make sure placeholders don't navigate away (they are set to '#')
+document.querySelectorAll('.btn').forEach(btn => {
+btn.addEventListener('click', (e) => {
+if (btn.getAttribute('href') === '#') {
+e.preventDefault();
+alert('This button has no link yet. Edit the href in the HTML to add a destination.');
+}
+})
+})
+</script>
+</body>
+</html>
